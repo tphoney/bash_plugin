@@ -1,0 +1,5 @@
+FROM alpine
+ADD advanced.sh /bin/
+RUN chmod +x /bin/advanced.sh
+RUN apk -Uuv add curl ca-certificates
+ENTRYPOINT /bin/advanced.sh

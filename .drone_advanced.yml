@@ -1,0 +1,20 @@
+kind: pipeline
+name: default
+
+steps:
+- name: failing step
+  image: golang
+  pull: if-not-exists
+  commands:
+  - this is a bad command 
+- name: advanced
+  image: tphoney/advanced
+  pull: if-not-exists
+  settings:
+    ip: 192.168.0.115 
+  when:
+    status:
+    - success
+    - failure
+
+
