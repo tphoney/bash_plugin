@@ -2,9 +2,13 @@ kind: pipeline
 name: default
 type: aws
 
+instance:
+  ami: ami-051197ce9cbb023ea
+  network:
+    security_groups:
+      - sg-5d255b29
+
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
+- name: build
   commands:
-  - go version
+  - uname -a
