@@ -7,9 +7,5 @@ steps:
   pull: if-not-exists
   commands:
   - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
+
 
