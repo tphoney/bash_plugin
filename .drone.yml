@@ -1,12 +1,5 @@
 kind: pipeline
 name: default
-type: aws
-
-instance:
-  ami: ami-051197ce9cbb023ea
-  network:
-    security_groups:
-      - sg-5d255b29
 
 steps:
 - name: build
