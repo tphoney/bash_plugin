@@ -2,6 +2,13 @@ kind: pipeline
 name: default
 
 steps:
-- name: build
+- name: display go version
+  image: golang
+  pull: if-not-exists
   commands:
-  - uname -a
+  - go version
+- name: display weather 
+  image: tphoney/weather
+  pull: if-not-exists
+  settings:
+    city: BFS
