@@ -6,6 +6,8 @@ instance:
 # ubuntu 18.04 t1-micro ohio
   ami: ami-051197ce9cbb023ea 
   use_pool: true
+  private_key: ./private_key_file
+  public_key: ./public_key_file
   type: t2.nano
   network:
     security_groups:
