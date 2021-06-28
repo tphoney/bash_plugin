@@ -1,15 +1,18 @@
 kind: pipeline
+type: aws
 name: default
 
+instance:
+# ubuntu 18.04 t1-micro ohio
+  ami: ami-051197ce9cbb023ea 
+  type: t2.nano
+  network:
+    security_groups:
+      - sg-5d255b29
+      
 steps:
 - name: display go version
   image: golang
   pull: if-not-exists
   commands:
   - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
-
