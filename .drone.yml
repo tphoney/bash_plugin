@@ -5,6 +5,7 @@ name: default
 instance:
 # ubuntu 18.04 t1-micro ohio
   ami: ami-051197ce9cbb023ea 
+  use_pool: true
   type: t2.nano
   network:
     security_groups:
