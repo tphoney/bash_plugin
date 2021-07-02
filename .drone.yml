@@ -9,7 +9,7 @@ instance:
   type: t2.nano
   network:
     security_groups:
-      - sg-5d255b29
+      - sg-0f5aaeb48d35162a4 
       
 steps:
 - name: display go version
