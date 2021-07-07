@@ -11,3 +11,35 @@ steps:
   pull: if-not-exists
   commands:
   - go version
+
+---
+
+kind: pipeline
+type: aws
+name: go help
+
+instance:
+  use_pool: common
+      
+steps:
+- name: display go version
+  image: golang
+  pull: if-not-exists
+  commands:
+  - go help
+
+---
+
+kind: pipeline
+type: aws
+name: go weird
+
+instance:
+  use_pool: weird
+      
+steps:
+- name: display go version
+  image: golang
+  pull: if-not-exists
+  commands:
+  - go help
