@@ -1,15 +1,7 @@
 kind: pipeline
+type: kubernetes
 name: default
-
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
-  commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
-
+  - name: display env vars
+    image:  alpine:latest
+    commands: env
