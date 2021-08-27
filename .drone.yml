@@ -3,43 +3,38 @@ type: aws
 name: default
 
 instance:
-  use_pool: common
+  use: windows
       
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
+- name: check install
+    commands:
+      - type C:\ProgramData\Amazon\EC2-Windows\Launch\Log\UserdataExecution.log
+  - name: imagey + commands
+    image: golang:1.16.5-windowsservercore-1809
+    commands:
+      - go version
+      - go help
+      - dir c:/
+      - dir c:/volumes
+    volumes:
+      - name: cache
+        path: c:/volumes
+  - name: docker status
+    commands:
+      - docker ps -a
+      - docker network ls
+      - docker network inspect myNetwork
+  - name: ping timeoutserver service
+    image: golang:1.16.5-windowsservercore-1809
+    commands:
+      - ping timeoutserver
+
+volumes:
+- name: cache
+  temp: {}
+
+services:
+- name: timeoutserver
+  image: golang:1.16.5-windowsservercore-1809
   commands:
-  - go version
-
----
-
-kind: pipeline
-type: aws
-name: go help
-
-instance:
-  use_pool: common
-      
-steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
-  commands:
-  - go help
-
----
-
-kind: pipeline
-type: aws
-name: go weird
-
-instance:
-  use_pool: weird
-      
-steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
-  commands:
-  - go help
+    - powershell Start-Sleep -s 1800
