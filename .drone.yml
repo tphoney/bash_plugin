@@ -6,7 +6,7 @@ instance:
   use: windows
       
 steps:
-- name: check install
+  - name: check install
     commands:
       - type C:\ProgramData\Amazon\EC2-Windows\Launch\Log\UserdataExecution.log
   - name: imagey + commands
