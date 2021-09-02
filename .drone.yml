@@ -9,6 +9,8 @@ steps:
   - name: check install
     commands:
       - cat /var/log/cloud-init-output.log
+      - hostname -f
+      - ifconfig
   - name: plugin
     image: plugins/docker
     settings:
