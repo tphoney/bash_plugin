@@ -3,7 +3,7 @@ type: aws
 name: default
 
 pool:
-  use: this doesnt exist
+  use: ubuntu
 
 steps:
   - name: check install
