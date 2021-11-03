@@ -3,7 +3,7 @@ type: aws
 name: default
 
 pool:
-  use: windows 2019
+  use: windows
       
 steps:
   - name: check install
