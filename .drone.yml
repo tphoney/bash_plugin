@@ -16,11 +16,7 @@ steps:
   - name: dummy-echo
     image: alpine:latest
     commands:
-      - echo "sleep 10s and fail."
-  - name: sleep
-    image: alpine:latest
-    commands:
-      - sleep 5
+      - echo "fail."
   - name: fail
     image: alpine:latest
     commands:
