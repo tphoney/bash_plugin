@@ -9,7 +9,7 @@ steps:
       - sleep 10
 
 depends_on:
- - build
+  - clone
 ---
 kind: pipeline
 type: docker
@@ -44,7 +44,7 @@ steps:
     commands:
       - echo "This is a dummy fast step."
 depends_on:
- - build
+  - build
 
 ---
 kind: pipeline
