@@ -8,8 +8,6 @@ steps:
       - echo "build step taking 10s."
       - sleep 10
 
-depends_on:
-  - clone
 ---
 kind: pipeline
 type: docker
