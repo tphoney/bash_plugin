@@ -2,11 +2,11 @@ kind: pipeline
 type: docker
 name: build
 steps:
-  name: dummy-echo
-  image: alpine:latest
-  commands:
-    - echo "build step taking 10s."
-    - sleep 10
+  - name: dummy-echo
+    image: alpine:latest
+    commands:
+      - echo "build step taking 10s."
+      - sleep 10
 
 ---
 kind: pipeline
@@ -31,20 +31,20 @@ kind: pipeline
 type: docker
 name: tools
 steps:
-  name: dummy-echo
-  image: alpine:latest
-  commands:
-    - echo "This is a fast pipeline with success."
+  - name: dummy-echo
+    image: alpine:latest
+    commands:
+      - echo "This is a fast pipeline with success."
 
 ---
 kind: pipeline
 type: docker
 name: deploy
 steps:
-  name: dummy-echo
-  image: alpine:latest
-  commands:
-    - echo "This is a dummy fast step."
+  - name: dummy-echo
+    image: alpine:latest
+    commands:
+      - echo "This is a dummy fast step."
 depends_on:
  - build
 
@@ -53,9 +53,9 @@ kind: pipeline
 type: docker
 name: perf
 steps:
-  name: dummy-echo
-  image: alpine:latest
-  commands:
-    - echo "This is a dummy fast step."
+  - name: dummy-echo
+    image: alpine:latest
+    commands:
+      - echo "This is a dummy fast step."
 depends_on:
   -  build
