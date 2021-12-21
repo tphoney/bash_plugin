@@ -37,6 +37,6 @@ services:
   - name: red
     image: redis
 
-volumes:
-- name: cache
-  temp: {}
+#volumes:
+#- name: cache
+#  temp: {}
