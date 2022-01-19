@@ -2,14 +2,12 @@ kind: pipeline
 name: default
 
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
-  commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
+- name: plugin upload
+  image: plugins/docker
   settings:
-    city: LAX
-
+    repo: tphoney/test
+    username: tphoney
+    password:
+      from_secret: docker_password
+    tags: latest
+    dockerfile: Dockerfile
