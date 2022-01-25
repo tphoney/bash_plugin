@@ -11,6 +11,7 @@ steps:
       - cat /var/log/cloud-init-output.log
       - hostname -f
       - ifconfig
+      - touch /tmp/blaaaa
   - name: plugin
     image: plugins/docker
     settings:
@@ -37,7 +38,10 @@ steps:
     image: redis
     commands:
       - redis-cli -h red ping
-
+  - name: check host volume
+    commands:
+      - ls /tmp
+      
 services:
   - name: red
     image: redis
