@@ -29,6 +29,7 @@ steps:
       - go version
       - go help
       - touch /tmp/host-volumes-work
+      - ls -al /tmp
   - name: docker status
     commands:
       - docker ps -a
