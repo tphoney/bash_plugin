@@ -17,7 +17,7 @@ steps:
     settings:
       dry_run: true
       repo: foo/bar
-      tags: latest
+      tags: 1.0.0
     volumes:
       - name: cache
         path: /go
