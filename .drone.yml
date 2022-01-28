@@ -38,6 +38,9 @@ steps:
     image: redis
     commands:
       - redis-cli -h red ping
+    volumes:
+      - name: tempy
+        path: /tmp
   - name: check host volume
     commands:
       - ls /tmp
