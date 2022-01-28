@@ -23,13 +23,9 @@ steps:
  #       path: /go
   - name: imagey + commands
     image: golang
-    volumes:
-      - name: tempy
-        path: /tmp
     commands:
       - go version
       - go help
-      - touch /tmp/host-volumes-work
       - ls -al /tmp
   - name: docker status
     commands:
@@ -38,9 +34,6 @@ steps:
     image: redis
     commands:
       - redis-cli -h red ping
-    volumes:
-      - name: tempy
-        path: /tmp
   - name: check host volume
     commands:
       - ls /tmp
@@ -52,6 +45,3 @@ services:
 volumes:
 - name: cache
   temp: {}
-- name: tempy
-  host:
-    path: /tmp
