@@ -12,6 +12,7 @@ steps:
       - hostname -f
       - ifconfig
       - touch /tmp/blaaaa
+      - env
   - name: plugin
     image: plugins/docker
     settings:
