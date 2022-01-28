@@ -12,15 +12,15 @@ steps:
       - hostname -f
       - ifconfig
       - touch /tmp/blaaaa
- # - name: plugin
- #   image: plugins/docker
- #   settings:
- #     dry_run: true
- #     repo: foo/bar
- #     tags: latest
- #   volumes:
- #     - name: cache
- #       path: /go
+ - name: plugin
+   image: plugins/docker
+   settings:
+     dry_run: true
+     repo: foo/bar
+     tags: latest
+   volumes:
+     - name: cache
+       path: /go
   - name: imagey + commands
     image: golang
     commands:
