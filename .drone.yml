@@ -23,7 +23,7 @@ steps:
     commands:
       - docker ps -a
       - docker network ls
-      - docker network inspect myNetwork
+      - docker network inspect drone
   - name: ping timeoutserver service
     image: golang:1.16.5-windowsservercore-1809
     commands:
