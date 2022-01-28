@@ -18,6 +18,7 @@ steps:
     settings:
       dry_run: true
       repo: foo/bar
+      default_suffix: marko
     volumes:
       - name: cache
         path: /go
