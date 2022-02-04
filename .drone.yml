@@ -7,9 +7,15 @@ steps:
   pull: if-not-exists
   commands:
   - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
+- name: jira
+  image: plugins/jira
+  pull: never
   settings:
-    city: LAX
+    client_id:
+      from_secret: jira_client_id
+    client_secret:
+      from_secret: jira_client_secret
+    instance: droneio
+    project: TT
+    environment: production
 
