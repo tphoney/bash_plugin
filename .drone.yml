@@ -18,4 +18,5 @@ steps:
     instance: droneio
     project: TT
     environment: production
-
+    pipeline: bash_plugin
+    
