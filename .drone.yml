@@ -18,7 +18,7 @@ steps:
     instance: droneio
     project: TT
     environment: 
-      PLUGIN_LOG_LEVEL: DEBUG
+      LOG_LEVEL: DEBUG
     pipeline: bash_plugin
     
 
