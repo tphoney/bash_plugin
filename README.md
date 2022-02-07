@@ -3,4 +3,7 @@ Some basic examples for drone plugins written in bash, with example drone build 
 
 username: admin
 
-awscreds: asdasdasfd
+password: no noes
+
+aws_access_key: AKIAIOSFODNN7EXAMPLE
+
