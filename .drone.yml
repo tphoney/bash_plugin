@@ -17,6 +17,7 @@ steps:
       from_secret: jira_client_secret
     instance: droneio
     project: TT
+    environment_name: staging
     environment: 
       LOG_LEVEL: DEBUG
     pipeline: bash_plugin
