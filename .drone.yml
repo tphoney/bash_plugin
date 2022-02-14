@@ -1,15 +1,17 @@
 kind: pipeline
 name: default
 
+clone:
+  disable: true
+
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
+- name: run plugins/drone-diagnostics plugin
+  image: plugins/drone-diagnostics
+  pull: never
   commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
+    - env
+    - ping www.github.com -w 5
+    - traceroute -T -p 443 www.github.com
+    - dig www.apple.com
+    - echo "end of test"
 
