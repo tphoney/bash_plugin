@@ -7,7 +7,6 @@ clone:
 steps:
 - name: run plugins/drone-diagnostics plugin
   image: plugins/drone-diagnostics
-#  pull: never
   commands:
     - env
     - ping www.github.com -w 5
