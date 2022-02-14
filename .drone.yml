@@ -7,10 +7,10 @@ clone:
 steps:
 - name: run plugins/drone-diagnostics plugin
   image: plugins/drone-diagnostics:0.0.1
+  pull: never
   commands:
     - env
     - ping www.github.com -w 5
     - traceroute -T -p 443 www.github.com
     - dig www.apple.com
     - echo "end of test"
-
