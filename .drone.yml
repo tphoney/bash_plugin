@@ -6,7 +6,7 @@ clone:
 
 steps:
 - name: run plugins/drone-diagnostics plugin
-  image: plugins/drone-diagnostics:0.0.1
+  image: plugins/drone-diagnostics
   pull: never
   commands:
     - env
