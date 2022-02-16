@@ -4,6 +4,7 @@ name: default
 steps:
 - name: build dummy docker file and publish
   image: plugins/docker
+  pull: never
   settings:
     repo: tphoney/test
     auto_tag: true
