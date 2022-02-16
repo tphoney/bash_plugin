@@ -7,7 +7,7 @@ steps:
   pull: never
   settings:
     repo: tphoney/test
-    auto_tag: true
+    tags: latest
     username:
       from_secret: docker_username
     password:
