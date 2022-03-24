@@ -1,15 +1,11 @@
 kind: pipeline
-name: default
+type: docker
+name: beech/docker/ubi8/python36
 
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
-  commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
-
+  - name: debug
+    image: ubi8/python36
+    commands:
+      - /bin/cat /var/log/dnf.log | /bin/wc -l
+      - /bin/cat /var/log/dnf.log
+      - /bin/false
