@@ -4,7 +4,7 @@ name: beech/docker/ubi8/python36
 
 steps:
   - name: debug
-    image: ubi8/python36
+    image: python:3.6
     commands:
       - /bin/cat /var/log/dnf.log | /bin/wc -l
       - /bin/cat /var/log/dnf.log
