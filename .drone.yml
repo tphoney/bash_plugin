@@ -7,5 +7,6 @@ steps:
     image: python:3.6
     commands:
       - ls -al /var/log/
-      - /bin/cat /var/log/messages
+      - ls -alh /var/log/dpkg.log
+      - /bin/cat /var/log/dpkg.log
       - /bin/false
