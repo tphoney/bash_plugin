@@ -6,6 +6,5 @@ steps:
   - name: debug
     image: python:3.6
     commands:
-      - /bin/cat /var/log/dnf.log | /bin/wc -l
       - /bin/cat /var/log/dnf.log
       - /bin/false
