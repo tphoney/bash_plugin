@@ -1,12 +1,14 @@
+---
 kind: pipeline
 type: docker
-name: beech/docker/ubi8/python36
+name: registry.access.redhat.com/ubi7/ubi
 
+clone:
+  disable: true
 steps:
-  - name: debug
-    image: python:3.6
+  - name: drone test
+    image: registry.access.redhat.com/ubi7/ubi
     commands:
-      - ls -al /var/log/
-      - ls -alh /var/log/dpkg.log
-      - /bin/cat /var/log/dpkg.log
-      - /bin/false
+      - /usr/bin/tail -3000 /var/log/anaconda/journal.log
+      - /usr/bin/echo "Output complete."
+      - /bin/false   
