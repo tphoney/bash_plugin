@@ -9,6 +9,7 @@ steps:
   - name: drone test
     image: registry.access.redhat.com/ubi7/ubi
     commands:
+      - sleep 5
       - /usr/bin/tail -3000 /var/log/anaconda/journal.log
       - /usr/bin/echo "Output complete."
       - /bin/false   
