@@ -12,4 +12,3 @@ steps:
       - /usr/bin/tail -3000 /var/log/anaconda/journal.log
       - /usr/bin/echo "Output complete."
       - /bin/false
-      - sleep 5
