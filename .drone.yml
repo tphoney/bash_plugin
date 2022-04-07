@@ -11,4 +11,5 @@ steps:
     commands:
       - /usr/bin/tail -3000 /var/log/anaconda/journal.log
       - /usr/bin/echo "Output complete."
+      - for i in {1..100} ; do echo “$i” ; sleep 10 ; done
       - /bin/false
