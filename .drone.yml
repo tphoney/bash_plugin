@@ -13,3 +13,7 @@ steps:
       - /usr/bin/echo "Output complete."
       - for i in {1..100} ; do echo “$i” ; sleep 10 ; done
       - /bin/false
+  - name: download  
+    image: plugins/download
+    settings:
+      source: https://github.com/drone/drone-cli/releases/download/v0.8.5/drone_linux_amd64.tar.gz
