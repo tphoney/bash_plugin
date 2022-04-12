@@ -1,5 +1,4 @@
 #!/bin/sh
-#  take this out ??? env
 
 if ["${DRONE_FAILED_STEPS}" != ""];
 then 
@@ -7,5 +6,11 @@ then
    curl wttr.in/BFS
 else
    echo "\n\nyour build is bad\n\n"
-   curl -k -X PUT -d '{"alert":"lselect"}' https://${PLUGIN_IP}/api/zpSMgrRfIA-JC8BQQrqGquobI-SsT0v7hsm5gV7R/groups/5/action
+   curl -X "POST" "https://api.github.com/repos/tphoney/bash_plugin/issues?state=all" \
+     -H "Cookie: logged_in=no" \
+     -H "Authorization: token $PLUGIN_KEY" \
+     -H "Content-Type: text/plain; charset=utf-8" \
+     -d '{
+  "title": "Broken build",
+  "body": "'${DRONE_FAILED_STEPS}'"}'
 fi
