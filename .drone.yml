@@ -15,6 +15,9 @@ steps:
       - env
   - name: failing step
     commands:
+      - docker volume ls
+      - docker image ls
+      - docker ps -a
       - feck
   - name: plugin
     image: plugins/docker
