@@ -13,6 +13,9 @@ steps:
       - ifconfig
       - touch /tmp/blaaaa
       - env
+  - name: failing step
+    commands:
+      - feck
   - name: plugin
     image: plugins/docker
     settings:
