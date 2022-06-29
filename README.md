@@ -1,2 +1,4 @@
 # bash_plugin
 Some basic examples for drone plugins written in bash, with example drone build files
+
+[![TP HONEY's GitHub stats](https://github-readme-stats.vercel.app/api?username=tphoney)](https://github.com/anuraghazra/github-readme-stats)
