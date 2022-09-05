@@ -11,6 +11,7 @@ steps:
   image: alpine:latest
   commands:
     - sleep 2
+    - pwd
     - echo $DRONE_ENV
     - echo "HELLO=WORLD" >> $DRONE_ENV
     - cat $DRONE_ENV
