@@ -6,10 +6,20 @@ steps:
   image: golang
   pull: if-not-exists
   commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
+    - go version
+- name: set env
+  image: alpine:latest
+  commands:
+    - sleep 2
+    - echo $DRONE_ENV
+    - echo "HELLO=WORLD" >> $DRONE_ENV
+    - cat $DRONE_ENV
+    - ls $DRONE_ENV
+- name: get env
+  image: alpine:latest
+  commands:
+    - sleep 2
+    - cat $DRONE_ENV
+    - ls $DRONE_ENV
+    - echo its the end of the $HELLO as we know it
 
