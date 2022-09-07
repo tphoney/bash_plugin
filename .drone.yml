@@ -1,15 +1,31 @@
 kind: pipeline
-name: default
+name: defaultA
 
 steps:
-- name: display go version
+- name: display go version A1
   image: golang
   pull: if-not-exists
   commands:
   - go version
-- name: display weather 
-  image: tphoney/weather
+steps:
+- name: display go version A2
+  image: golang
   pull: if-not-exists
-  settings:
-    city: LAX
+  commands:
+  - go version
 
+kind: pipeline
+name: defaultB
+
+steps:
+- name: display go version B1
+  image: golang
+  pull: if-not-exists
+  commands:
+  - go version
+steps:
+- name: display go version B2
+  image: golang
+  pull: if-not-exists
+  commands:
+  - go version
