@@ -7,7 +7,6 @@ steps:
   pull: if-not-exists
   commands:
   - go version
-steps:
 - name: display go version A2
   image: golang
   pull: if-not-exists
@@ -25,7 +24,6 @@ steps:
   pull: if-not-exists
   commands:
   - go version
-steps:
 - name: display go version B2
   image: golang
   pull: if-not-exists
