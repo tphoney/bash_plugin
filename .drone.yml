@@ -13,6 +13,8 @@ steps:
   pull: if-not-exists
   commands:
   - go version
+  
+---
 
 kind: pipeline
 name: defaultB
