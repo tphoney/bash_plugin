@@ -4,8 +4,6 @@ name: default
 steps:
 - name: display go version A1
   image: alpine
-  pull: if-not-exists
   commands:
   - uname -a
   - sleep 2
-
