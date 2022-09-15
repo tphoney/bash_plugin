@@ -1,6 +1,9 @@
 kind: pipeline
 name: default
 
+clone:
+  disable: true
+
 steps:
 - name: display go version A1
   image: alpine
