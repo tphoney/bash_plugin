@@ -2,13 +2,13 @@ kind: pipeline
 name: default
 
 steps:
-- name: display go version
+- name: failure ignore
   image: golang
   pull: if-not-exists
   failure: ignore
   commands:
   - asadsd
-- name: display go version
+- name: env
   image: golang
   pull: if-not-exists
   failure: ignore
@@ -19,12 +19,12 @@ kind: pipeline
 name: default2
 
 steps:
-- name: display go version
+- name: failure
   image: golang
   pull: if-not-exists
   commands:
   - asadsd
-- name: display go version
+- name: env
   image: golang
   pull: if-not-exists
   failure: ignore
@@ -33,3 +33,4 @@ steps:
   when:
     status:
       failure
+      success
