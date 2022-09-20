@@ -5,11 +5,31 @@ steps:
 - name: display go version
   image: golang
   pull: if-not-exists
+  failure: ignore
   commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
+  - asadsd
+- name: display go version
+  image: golang
   pull: if-not-exists
-  settings:
-    city: LAX
+  failure: ignore
+  commands:
+  - env
+---
+kind: pipeline
+name: default2
 
+steps:
+- name: display go version
+  image: golang
+  pull: if-not-exists
+  commands:
+  - asadsd
+- name: display go version
+  image: golang
+  pull: if-not-exists
+  failure: ignore
+  commands:
+  - env
+  when:
+    status:
+      failure
