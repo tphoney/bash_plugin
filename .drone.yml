@@ -6,11 +6,18 @@ pool:
   use: testpool
 
 steps:
-- name: fix permissions
+- name: bare metal
   commands:
-    - sudo chmod -R 777  /tmp/aws
     - env
-    - touch  /tmp/aws/drone/src/manifest-710999355
+    - touch  /tmp/aws/drone/src/metal
+- name: container create
+  image: alpine
+  commands:
+    - touch  /tmp/aws/drone/src/container
+    - ls -al /tmp/aws/drone/src/
+- name: bare metal
+  commands:
+    - ls -al /tmp/aws/drone/src/
 - name: docker
   image: plugins/docker
   settings:
