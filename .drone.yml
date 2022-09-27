@@ -9,6 +9,8 @@ steps:
 - name: fix permissions
   commands:
     - sudo chmod -R 777  /tmp/aws
+    - env
+    - touch  /tmp/aws/drone/src/manifest-710999355
 - name: docker
   image: plugins/docker
   settings:
