@@ -6,6 +6,9 @@ pool:
   use: testpool
 
 steps:
+- name: fix permissions
+  commands:
+    - sudo chmod -R 777  /tmp/aws
 - name: docker
   image: plugins/docker
   settings:
