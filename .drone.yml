@@ -1,15 +1,32 @@
 kind: pipeline
-name: default
+type: vm
+name: testing
+
+pool:
+  use: testpool
 
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
-  commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
+- name: docker
+  image: plugins/docker
   settings:
-    city: LAX
-
+    dockerfile: Dockerfile
+    repo: tphoney/test
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    auto_tag: true
+    auto_tag_suffix: linux-amd64
+- name: manifest
+  image: plugins/manifest:1.2
+  settings:
+    auto_tag: 'true'
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    spec: docker/manifest.tmpl
+    ignore_missing: true
+trigger:
+  ref:
+  - refs/tags/**
