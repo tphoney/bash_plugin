@@ -15,7 +15,7 @@ steps:
   commands:
     - touch  /tmp/aws/drone/src/container
     - ls -al /tmp/aws/drone/src/
-- name: bare metal
+- name: check volumes work
   commands:
     - ls -al /tmp/aws/drone/src/
 - name: docker
