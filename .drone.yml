@@ -18,6 +18,7 @@ steps:
     - pwd
     - echo $DRONE_ENV
     - echo "HELLO=WORLD" >> $DRONE_ENV
+    - chmod 777 $DRONE_ENV
     - cat $DRONE_ENV
     - ls $DRONE_ENV
 - name: get env
