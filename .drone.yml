@@ -1,6 +1,9 @@
 kind: pipeline
 name: default
 
+pool: 
+  use: test_pool
+
 steps:
 - name: display go version
   image: golang
