@@ -16,6 +16,8 @@ steps:
     - echo "HELLO=WORLD" >> $DRONE_ENV
     - cat $DRONE_ENV
     - ls $DRONE_ENV
+  outputs:
+    - hello
 - name: get env
   image: alpine:latest
   commands:
