@@ -13,7 +13,7 @@ steps:
     - sleep 2
     - pwd
     - echo $DRONE_ENV
-    - echo "HELLO=WORLD" >> $DRONE_ENV
+    - echo "hello=WORLD" >> $DRONE_ENV
     - cat $DRONE_ENV
     - ls $DRONE_ENV
   outputs:
