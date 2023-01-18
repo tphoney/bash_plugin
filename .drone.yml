@@ -5,9 +5,6 @@ name: default
 pool:
   use: ubuntu 
 steps:
-  - name: print env
-    commands:
-      - ssh-add -l
   - name: docker
     image: tphoney/docker:latest
     pull: always
