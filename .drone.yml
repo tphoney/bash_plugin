@@ -17,6 +17,7 @@ steps:
     settings:
       dockerfile: Dockerfile
       ssh_agent: default
+      daemon_off: false
       tags:
         - silly
       repo: tphoney/bash
