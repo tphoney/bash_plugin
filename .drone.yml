@@ -1,7 +1,9 @@
 kind: pipeline
-type: docker
+type: vm
 name: default
 
+pool:
+  use: ubuntu 
 steps:
   # - name: print env
   #   image: alpine:latest
