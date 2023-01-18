@@ -7,7 +7,7 @@ pool:
 steps:
   - name: print env
     commands:
-      - apt-get install openssh-client -y
+      - ssh-add -l
   - name: docker
     image: tphoney/docker:latest
     pull: always
