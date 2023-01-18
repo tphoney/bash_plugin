@@ -1,5 +1,8 @@
+#syntax=docker/dockerfile-upstream:master-experimental
+
 FROM alpine
-ADD script.sh /bin/
-RUN chmod +x /bin/script.sh
-RUN apk -Uuv add curl ca-certificates
-ENTRYPOINT /bin/script.sh
+RUN apk add --no-cache openssh-client \
+   && adduser -u 100 -h /example -S example example
+
+USER example
+RUN --mount=type=ssh,uid=100 ssh-add -L
