@@ -5,12 +5,9 @@ name: default
 pool:
   use: ubuntu 
 steps:
-  # - name: print env
-  #   image: alpine:latest
-  #   commands:
-  #     - ls -al
-  #     - sleep 2
-  #     - echo ${DRONE_COMMIT_SHA:0:7}.${DRONE_BUILD_NUMBER}
+  - name: print env
+    commands:
+      - apt-get install openssh-client -y
   - name: docker
     image: tphoney/docker:latest
     pull: always
