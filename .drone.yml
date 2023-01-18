@@ -1,9 +1,7 @@
 kind: pipeline
-type: vm
+type: docker
 name: default
 
-pool:
-  use: ubuntu 
 steps:
   - name: docker
     image: tphoney/docker:latest
