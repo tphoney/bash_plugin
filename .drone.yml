@@ -9,7 +9,6 @@ steps:
   - go version
 - name: jira
   image: plugins/jira
-  pull: never
   settings:
     connect_key:
       from_secret: connect_key
