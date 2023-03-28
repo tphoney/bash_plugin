@@ -12,8 +12,7 @@ steps:
   settings:
     connect_key:
       from_secret: connect_key
-    connect_hostname: https://8e34-82-26-10-225.eu.ngrok.io
-    instance: droneio
+    connect_hostname: https://0bbf-159-242-98-74.eu.ngrok.io
     project: TEST
     instance: d1wilko
     environment_name: staging
