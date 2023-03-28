@@ -11,12 +11,12 @@ steps:
   image: plugins/jira
   pull: never
   settings:
-    client_id:
-      from_secret: jira_client_id
-    client_secret:
-      from_secret: jira_client_secret
+    connect_key:
+      from_secret: connect_key
+    connect_hostname: https://8e34-82-26-10-225.eu.ngrok.io
     instance: droneio
-    project: TT
+    project: TEST
+    instance: d1wilko
     environment_name: staging
     log_level: debug
     pipeline: bash_plugin
