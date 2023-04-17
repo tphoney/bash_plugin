@@ -11,7 +11,7 @@ steps:
   - free -g -h -t
   - uname -a
   - lsb_release -a
-- name:
+- name: goish
   image: golang:1.19
   commands:
     - go version
@@ -30,7 +30,7 @@ steps:
   - free -g -h -t
   - uname -a
   - lsb_release -a
-- name:
+- name: goish
   image: golang:1.19
   commands:
     - go version
