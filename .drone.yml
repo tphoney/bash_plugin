@@ -1,15 +1,36 @@
 kind: pipeline
 name: default
+type: vm
+
+pool:
+  use: ubuntu
 
 steps:
 - name: display go version
-  image: golang
-  pull: if-not-exists
   commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
+  - free -g -h -t
+  - uname -a
+  - lsb_release -a
+- name:
+  image: golang:1.19
+  commands:
+    - go version
 
+---
+kind: pipeline
+name: default arm
+type: vm
+
+pool:
+  use: ubuntu_arm64
+
+steps:
+- name: display go version
+  commands:
+  - free -g -h -t
+  - uname -a
+  - lsb_release -a
+- name:
+  image: golang:1.19
+  commands:
+    - go version
