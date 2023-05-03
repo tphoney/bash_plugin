@@ -2,9 +2,15 @@ kind: pipeline
 name: default
 
 steps:
+  - name: hello
+    image: golang
+    commands:
+      - uname -a
+      - go version
   - name: ping
     image: redis
     commands:
+      - sleep 5
       - redis-cli -h red ping
       
 services:
