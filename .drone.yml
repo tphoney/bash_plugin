@@ -2,14 +2,11 @@ kind: pipeline
 name: default
 
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
-  commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
-
+  - name: ping
+    image: redis
+    commands:
+      - redis-cli -h red ping
+      
+services:
+  - name: red
+    image: redis
