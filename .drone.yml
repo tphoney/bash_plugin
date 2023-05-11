@@ -6,6 +6,7 @@ steps:
   image: plugins/ansible
   settings:
     playbook: ./playbook.yml
+    inventory: ./inventory
     syntax_check: true
 
 
