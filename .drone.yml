@@ -8,10 +8,11 @@ steps:
   commands:
   - go version
 - name: oom
-  image: alpine
+  image: progrium/stress
   pull: if-not-exists
   commands:
-  - tail /dev/zero
+  # - tail /dev/zero
+    - stress -m 2
 - name: display go version part2
   image: golang
   pull: if-not-exists
