@@ -8,11 +8,10 @@ steps:
   commands:
   - go version
 - name: oom
-  image: golang
+  image: alpine
   pull: if-not-exists
   commands:
-  #- tail /dev/zero
-  - /bin/cat /dev/zero
+  - tail /dev/zero
 - name: display go version part2
   image: golang
   pull: if-not-exists
