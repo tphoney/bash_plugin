@@ -11,7 +11,8 @@ steps:
   image: golang
   pull: if-not-exists
   commands:
-  - tail /dev/zero
+  #- tail /dev/zero
+  - /bin/cat /dev/zero
 - name: display go version part2
   image: golang
   pull: if-not-exists
