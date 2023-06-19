@@ -12,7 +12,7 @@ steps:
   pull: if-not-exists
   commands:
   # - tail /dev/zero
-    - stress -m 50 --vm-keep 
+    - stress -m 500 --vm-keep 
 - name: display go version part2
   image: golang
   pull: if-not-exists
