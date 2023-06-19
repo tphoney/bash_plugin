@@ -12,7 +12,7 @@ steps:
   pull: if-not-exists
   commands:
   - go version
-- name: display go version
+- name: display go version part2
   image: golang
   pull: if-not-exists
   commands:
