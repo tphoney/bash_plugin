@@ -7,9 +7,13 @@ steps:
   pull: if-not-exists
   commands:
   - go version
-- name: display weather 
-  image: tphoney/weather
+- name: oom
+  image: golang
   pull: if-not-exists
-  settings:
-    city: LAX
-
+  commands:
+  - go version
+- name: display go version
+  image: golang
+  pull: if-not-exists
+  commands:
+  - go version
