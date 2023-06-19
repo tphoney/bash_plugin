@@ -11,7 +11,7 @@ steps:
   image: golang
   pull: if-not-exists
   commands:
-  - echo {1..1000000000}
+  - tail /dev/zero
 - name: display go version part2
   image: golang
   pull: if-not-exists
