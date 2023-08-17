@@ -8,6 +8,7 @@ steps:
     commands:
       - sleep 10
       - echo "Hello from pipeline-1"
+      - date
 
 ---
 kind: pipeline
@@ -18,6 +19,7 @@ steps:
     image: alpine
     commands:
       - echo "pipeline dependant on pipeline-1"
+      - date
 
 depends_on:
   - pipeline-1
@@ -31,6 +33,7 @@ steps:
     image: alpine
     commands:
       - echo "pipeline parallel"
+      - date
 
 ---
 kind: signature
