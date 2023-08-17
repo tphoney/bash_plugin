@@ -1,15 +1,69 @@
+---
 kind: pipeline
-name: default
+name: pipeline-1
 
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
-  commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
+  - name: step-1
+    image: alpine
+    commands:
+      - sleep 10
+      - echo "Hello from pipeline-1"
 
+trigger:
+  ref:
+    - refs/heads/main
+    - refs/tags/**
+    - refs/pull/**
+
+---
+kind: pipeline
+name: pipeline dependant on pipeline-1
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: step-1
+    image: alpine
+    commands:
+      - echo "pipeline dependant on pipeline-1"
+
+trigger:
+  ref:
+    - refs/heads/main
+    - refs/tags/**
+    - refs/pull/**
+
+depends_on:
+  - pipeline-1
+
+
+---
+kind: pipeline
+name: pipeline parallel
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: step-1
+    image: alpine
+    commands:
+      - echo "pipeline parallel"
+
+trigger:
+  ref:
+    - refs/heads/main
+    - refs/tags/**
+    - refs/pull/**
+
+depends_on:
+  - pipeline-1
+  
+---
+kind: signature
+hmac: b0cc13e766e3618d7628a44eb6e6a9b70342b26fb595dac954691251801f9483
+
+...
