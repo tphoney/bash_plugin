@@ -61,9 +61,3 @@ trigger:
 
 depends_on:
   - pipeline-1
-  
----
-kind: signature
-hmac: b0cc13e766e3618d7628a44eb6e6a9b70342b26fb595dac954691251801f9483
-
-...
