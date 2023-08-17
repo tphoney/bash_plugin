@@ -9,7 +9,6 @@ steps:
       - sleep 10
       - echo "Hello from pipeline-1"
       - date
-
 ---
 kind: pipeline
 name: dependant-pipeline-1
