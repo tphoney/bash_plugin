@@ -20,7 +20,6 @@ steps:
     commands:
       - echo "pipeline dependant on pipeline-1"
       - date
-
 depends_on:
   - pipeline-1
 
@@ -34,6 +33,7 @@ steps:
     commands:
       - echo "pipeline parallel"
       - date
+
 
 ---
 kind: signature
