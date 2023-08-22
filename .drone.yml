@@ -22,8 +22,8 @@ steps:
       - date
 depends_on:
   - pipeline-1
-
 ---
+
 kind: pipeline
 name: parallel
 
