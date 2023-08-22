@@ -11,7 +11,6 @@ steps:
       - date
 ---
 
-
 kind: pipeline
 name: dependant-pipeline-1
 
