@@ -1,15 +1,19 @@
 kind: pipeline
+type: kubernetes
 name: default
 
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
-  commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
-
+  - name: hello
+    image: golang
+    commands:
+      - uname -a
+      - go version
+  - name: ping
+    image: redis
+    commands:
+      - sleep 5
+      - redis-cli -h red ping
+      
+services:
+  - name: red
+    image: redi
