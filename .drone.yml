@@ -16,4 +16,4 @@ steps:
       
 services:
   - name: red
-    image: redi
+    image: redis
