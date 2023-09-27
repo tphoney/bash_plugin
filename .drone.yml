@@ -13,6 +13,12 @@ steps:
     commands:
       - sleep 5
       - redis-cli -h red ping
+  - name: ping google
+    image: golang
+    commands:
+      - timeout 40 ping google.com
+    depends_on:
+      - hello
       
 services:
   - name: red
