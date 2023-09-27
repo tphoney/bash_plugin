@@ -11,14 +11,8 @@ steps:
   - name: ping
     image: redis
     commands:
-      - sleep 5
+      - timeout 40 sleep 5
       - redis-cli -h red ping
-  - name: ping google
-    image: plugins/drone-diagnostics
-    commands:
-      - timeout 40 ping google.com
-    depends_on:
-      - hello
       
 services:
   - name: red
