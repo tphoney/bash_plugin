@@ -6,3 +6,7 @@ steps:
   image: alpine
   commands:
   -  ls -al --color=auto
+- name: mono
+  image: alpine
+  commands:
+  -  ls -al
