@@ -1,15 +1,10 @@
 kind: pipeline
-name: default
+name: colour
 
 steps:
-- name: display go version
-  image: golang
-  pull: if-not-exists
+- name: colour
+  image: supertest2014/nyan
   commands:
-  - go version
-- name: display weather 
-  image: tphoney/weather
-  pull: if-not-exists
-  settings:
-    city: LAX
-
+  - echo hello
+  - sleep 5
+  - echo bye
