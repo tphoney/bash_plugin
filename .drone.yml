@@ -3,8 +3,6 @@ name: colour
 
 steps:
 - name: colour
-  image: supertest2014/nyan
+  image: alpine
   commands:
-  - echo hello
-  - sleep 5
-  - echo bye
+  -  ls -al --color=auto
