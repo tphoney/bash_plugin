@@ -9,4 +9,4 @@ steps:
 - name: color
   image: hongwenjun/lolcat
   commands:
-  -  /app/docker_cmd.txt
+  -  lolcat /app/docker_cmd.txt
