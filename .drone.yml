@@ -6,7 +6,7 @@ steps:
   image: alpine
   commands:
   -  ls -al --color=auto
-- name: mono
-  image: alpine
+- name: color
+  image: hongwenjun/lolcat
   commands:
-  -  ls -al
+  -  /app/docker_cmd.txt
