@@ -1,5 +1,9 @@
 kind: pipeline
+type: vm
 name: colour
+
+pool:
+  use: testpool
 
 steps:
 - name: colour
