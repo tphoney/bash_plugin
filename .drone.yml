@@ -1,9 +1,6 @@
 kind: pipeline
 name: default
 
-clone:
-  disable: true
-
 steps:
 - name: run plugins/drone-diagnostics plugin
   image: plugins/drone-diagnostics
