@@ -14,3 +14,4 @@ steps:
     - traceroute -T -p 443 www.github.com
     - dig www.apple.com
     - echo "end of test"
+    - this should fail
