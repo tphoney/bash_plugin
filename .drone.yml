@@ -10,9 +10,12 @@ steps:
   - name: ping
     image: redis
     commands:
-      - sleep 5
+      - sleep 60
       - redis-cli -h red ping
-      
+  - name: last step
+    image: golang
+    commands:
+      - ls -al
 services:
   - name: red
     image: redis
