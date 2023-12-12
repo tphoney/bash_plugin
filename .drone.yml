@@ -9,10 +9,9 @@ steps:
       - uname -a
       - go version
   - name: failer
-    image: golaadasdasdasf
+    image: alpine
     commands:
-      - uname -a
-      - go version
+      - exit 2
   - name: ping
     image: redis
     commands:
