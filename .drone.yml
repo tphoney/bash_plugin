@@ -8,6 +8,11 @@ steps:
     commands:
       - uname -a
       - go version
+  - name: failer
+    image: golaadasdasdasf
+    commands:
+      - uname -a
+      - go version
   - name: ping
     image: redis
     commands:
